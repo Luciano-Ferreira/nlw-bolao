@@ -1,0 +1,19 @@
+{
+  "name": "server-bolao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "fastify": "^4.9.2",
+    "tsx": "^3.11.0",
+    "typescript": "^4.8.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
