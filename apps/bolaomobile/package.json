@@ -1,0 +1,41 @@
+{
+  "name": "@nlwbolao/mobile",
+  "version": "0.0.0",
+  "main": "index.js",
+  "description": "> TODO: description",
+  "author": "lfs <luciano2023silva@gmail.com>",
+  "homepage": "https://github.com/Luciano-Ferreira/nlw-bolao#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luciano-Ferreira/nlw-bolao.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Luciano-Ferreira/nlw-bolao/issues"
+  },
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@expo-google-fonts/roboto": "^0.2.2",
+    "@types/react-native": "~0.69.1",
+    "expo": "~46.0.16",
+    "expo-font": "~10.2.0",
+    "expo-status-bar": "~1.4.0",
+    "native-base": "^3.4.20",
+    "react": "18.0.0",
+    "react-native": "0.69.6",
+    "react-native-safe-area-context": "4.3.1",
+    "react-native-svg": "12.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9"
+  },
+  "overrides": {
+    "react": "18.0.0"
+  },
+  "private": true
+}
