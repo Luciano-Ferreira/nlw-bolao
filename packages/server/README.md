@@ -35,6 +35,7 @@
   - @mermaid-js/mermaid-cli
 
 - Fastify
+  - @fastify/cors
 - Typescript
   - tsx
 
