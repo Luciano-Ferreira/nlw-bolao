@@ -18,9 +18,20 @@
     "url": "git+https://github.com/Luciano-Ferreira/nlw-bolao.git"
   },
   "scripts": {
-    "test": "node ./__tests__/web.test.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "bugs": {
     "url": "https://github.com/Luciano-Ferreira/nlw-bolao/issues"
+  },
+  "dependencies": {
+    "next": "^13.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.24"
   }
 }
