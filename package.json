@@ -1,0 +1,12 @@
+{
+  "name": "nlwbolao",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "license": "MIT",
+  "author": "Luciano Silva <luciano2023silva@gmail.com>",
+  "devDependencies": {
+    "lerna": "^6.0.1"
+  }
+}
