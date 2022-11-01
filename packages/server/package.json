@@ -1,0 +1,36 @@
+{
+  "name": "@nlwbolao/server",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "lfs <luciano2023silva@gmail.com>",
+  "homepage": "https://github.com/Luciano-Ferreira/nlw-bolao#readme",
+  "license": "ISC",
+  "main": "lib/server.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luciano-Ferreira/nlw-bolao.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/server.test.js",
+    "dev": "tsx watch src/server.ts"
+  },
+  "bugs": {
+    "url": "https://github.com/Luciano-Ferreira/nlw-bolao/issues"
+  },
+  "devDependencies": {
+    "fastify": "^4.9.2",
+    "prisma": "^4.5.0",
+    "tsx": "^3.11.0",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.5.0"
+  }
+}
