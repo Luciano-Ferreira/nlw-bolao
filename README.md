@@ -5,3 +5,5 @@
 ```
 
 Diagrama ERD
+
+monorepo nohoist
