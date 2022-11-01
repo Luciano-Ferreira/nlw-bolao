@@ -2,6 +2,7 @@
   "name": "nlwbolao",
   "private": true,
   "workspaces": [
+    "apps/*",
     "packages/*"
   ],
   "license": "MIT",
