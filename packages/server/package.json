@@ -5,6 +5,9 @@
   "author": "lfs <luciano2023silva@gmail.com>",
   "homepage": "https://github.com/Luciano-Ferreira/nlw-bolao#readme",
   "license": "ISC",
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
   "main": "lib/server.js",
   "directories": {
     "lib": "lib",

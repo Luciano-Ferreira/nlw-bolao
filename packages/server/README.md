@@ -20,12 +20,11 @@
   ## Run prisma studio
   yarn prisma studio
 
-  ## Generate Diagram and models
+  ## Generate Diagram 
   ## To generate Diagram you need to add generator in the schema.prisma
   yarn prisma generate
 ```
 
-## ERD Diagram
 
 ## Technologies :rocket:
 
@@ -39,3 +38,14 @@
 - Typescript
   - tsx
 
+
+## ERD Diagram
+
+![ERD](https://user-images.githubusercontent.com/46464433/199371454-7b3edbc6-52bd-440f-ac25-312f12e7d88e.svg)
+
+
+## Seeds
+
+```bash
+  npx prisma db seed
+```
