@@ -32,7 +32,8 @@
     "react-native-svg": "12.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "react-native-svg-transformer": "^1.0.0"
   },
   "overrides": {
     "react": "18.0.0"

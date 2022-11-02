@@ -1,4 +1,5 @@
-import { NativeBaseProvider, Center, StatusBar } from "native-base";
+import { NativeBaseProvider, StatusBar } from "native-base";
+
 import {
   useFonts,
   Roboto_400Regular,
@@ -15,7 +16,7 @@ export default function App() {
   const [fontsLoaded] = useFonts({
     Roboto_400Regular,
     Roboto_500Medium,
-    Roboto_700Bold,
+    Roboto_700Bold
   });
 
   return (
@@ -25,9 +26,7 @@ export default function App() {
           backgroundColor='transparent'
           translucent
         />
-        <Center flex={1} bgColor="gray.900">
-          {!fontsLoaded ? <Loading /> : <SignIn />}
-        </Center>
+        {!fontsLoaded ? <Loading /> : <SignIn />}
     </NativeBaseProvider>
   );
 }

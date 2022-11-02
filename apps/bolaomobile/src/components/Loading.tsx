@@ -2,6 +2,8 @@ import { Center, Spinner } from 'native-base';
 
 export function Loading(): JSX.Element {
   return (
-    <Spinner color='yellow.500' />
+    <Center flex={1}>
+      <Spinner color='yellow.500' />
+    </Center>
   )
 }
