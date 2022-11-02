@@ -96,7 +96,14 @@ function Home({ poolCount, guessCount, userCount }: Props): JSX.Element {
 
 
 export async function getStaticProps() {
-  const [poolCountResponse, guessCountResponse, usersCountResponse] = await Promise.all([api.get('pools/count'), api.get('guesses/count'), api.get('users/count')]);
+  const [poolCountResponse, guessCountResponse, usersCountResponse] = await 
+  Promise.all(
+    [
+      api.get('pools/count'), 
+      api.get('guesses/count'), 
+      api.get('users/count')
+    ]
+  );
 
   return {
     props: {

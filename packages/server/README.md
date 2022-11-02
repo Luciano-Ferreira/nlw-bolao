@@ -25,6 +25,10 @@
   yarn prisma generate
 ```
 
+```bash
+  yarn dev
+```
+
 
 ## Technologies :rocket:
 
