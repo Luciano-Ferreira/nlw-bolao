@@ -19,3 +19,5 @@ const web = require('web');
   - SEO
     - js disabled of Crawlers
 - Typescript
+- Sass
+- tailwindcss
