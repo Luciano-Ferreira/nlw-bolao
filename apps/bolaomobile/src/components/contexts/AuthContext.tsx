@@ -26,7 +26,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     console.log("Let's Login")
   }
 
-  return(
+  return (
     <AuthContext.Provider value={{signIn, user: {name: 'Luciano Silva', avatar: 'https://github.com/luciano-ferreira.png'}}}>
       {children}
     </AuthContext.Provider>
