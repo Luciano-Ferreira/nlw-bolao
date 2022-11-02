@@ -37,7 +37,10 @@
   - @fastify/cors
 - Typescript
   - tsx
-
+- zod
+  - validations
+- short-unique-id
+  
 
 ## ERD Diagram
 
