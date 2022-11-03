@@ -20,7 +20,7 @@
   ## Run prisma studio
   yarn prisma studio
 
-  ## Generate Diagram 
+  ## Generate Diagram and 
   ## To generate Diagram you need to add generator in the schema.prisma
   yarn prisma generate
 ```
