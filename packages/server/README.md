@@ -44,7 +44,8 @@
 - [zod](https://zod.dev/)
   - validations
 - short-unique-id
-  
+
+- JWT
 
 ## ERD Diagram
 
