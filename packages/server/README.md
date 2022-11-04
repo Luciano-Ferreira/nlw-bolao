@@ -41,7 +41,7 @@
   - @fastify/cors
 - Typescript
   - tsx
-- zod
+- [zod](https://zod.dev/)
   - validations
 - short-unique-id
   
