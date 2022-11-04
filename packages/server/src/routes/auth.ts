@@ -4,6 +4,12 @@ import fetch from 'node-fetch';
 import { prisma } from '../lib/prisma';
 
 export async  function authRoutes(fastify: FastifyInstance) {
+  fastify.get("/me", async (req, rep) => {
+    await req.jwtVerify()
+
+    return { user: req.user }
+  })
+
   fastify.post("/users", async (req, rep) => {
     const createUserBody = z.object({
       access_token: z.string(),
