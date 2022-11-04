@@ -12,7 +12,7 @@
 
 
 ```bash
-## create migrations
+## new migration
   yarn prisma migrate dev
 ```
 
