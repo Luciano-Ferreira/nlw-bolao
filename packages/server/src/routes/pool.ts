@@ -11,7 +11,7 @@ export async function poolRoutes(fastify: FastifyInstance) {
     return { count };
   });
 
-  fastify.post("/pools", async (req) => {
+  fastify.post("/pools/", async (req) => {
     const createPoolBody = z.object({
       title: z.string(),
     });
@@ -48,7 +48,7 @@ export async function poolRoutes(fastify: FastifyInstance) {
   });
 
   fastify.post(
-    "pools/:id/join",
+    "/pools/:id/join/",
     {
       onRequest: [authenticate],
     },
@@ -80,29 +80,75 @@ export async function poolRoutes(fastify: FastifyInstance) {
 
       if (pool.participants.length > 0) {
         return rep.status(400).send({
-          message: 'You already joined this pool!'
-        })
+          message: "You already joined this pool!",
+        });
       }
 
       if (!pool.ownerId) {
         await prisma.pool.update({
           where: {
-            id: pool.id
+            id: pool.id,
           },
           data: {
-            ownerId: req.user.sub
-          }
-        })
+            ownerId: req.user.sub,
+          },
+        });
       }
 
       await prisma.participant.create({
         data: {
           poolId: pool.id,
-          userId: req.user.sub
-        }
+          userId: req.user.sub,
+        },
       });
 
-      return rep.status(201).send()
+      return rep.status(201).send();
+    }
+  );
+
+  fastify.get(
+    "/pools",
+    {
+      onRequest: [authenticate],
+    },
+    async (req) => {
+      const pools = await prisma.pool.findMany({
+        where: {
+          participants: {
+            some: {
+              userId: req.user.sub,
+            },
+          },
+        },
+        include: {
+          _count: {
+            select: {
+              participants: true,
+            },
+          },
+          // inclui os 4 primeiros participantes relacionados
+          participants: {
+            select: {
+              id: true,
+
+              user: {
+                select: {
+                  avatarUrl: true,
+                }
+              }
+            },
+            take: 4
+          },
+          owner: {
+            select: {
+              id: true,
+              name: true,
+            },
+          },
+        },
+      });
+
+      return pools;
     }
   );
 }
