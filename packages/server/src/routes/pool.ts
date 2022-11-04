@@ -1,4 +1,4 @@
-import { FastifyInstance } from "fastify";
+import { FastifyInstance, FastifyRequest } from "fastify";
 import { prisma } from "../lib/prisma";
 
 import { z } from "zod";
@@ -10,7 +10,7 @@ export async function poolRoutes(fastify: FastifyInstance) {
     return { count };
   });
 
-  fastify.post("/pools", async (req, rep) => {
+  fastify.post("/pools", async (req, res) => {
     const createPoolBody = z.object({
       title: z.string(),
     });
@@ -20,11 +20,31 @@ export async function poolRoutes(fastify: FastifyInstance) {
     const generate = new ShortUniqueId({ length: 6 });
     const code = String(generate()).toUpperCase();
 
-    await prisma.pool.create({
-      data: {
-        title,
-        code,
-      },
-    });
+    try {
+      await req.jwtVerify()
+
+      await prisma.pool.create({
+        data: {
+          title,
+          code,
+          ownerId: req.user.sub,
+          
+          participants: {
+            create: {
+              userId: req.user.sub
+            }
+          }
+        },
+      });
+    } catch (err) {
+      await prisma.pool.create({
+        data: {
+          title,
+          code
+        },
+      });
+    }
+
+    
   });
 }
