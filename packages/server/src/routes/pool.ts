@@ -48,7 +48,7 @@ export async function poolRoutes(fastify: FastifyInstance) {
   });
 
   fastify.post(
-    "pools/:id/",
+    "pools/:id/join",
     {
       onRequest: [authenticate],
     },
@@ -81,6 +81,17 @@ export async function poolRoutes(fastify: FastifyInstance) {
       if (pool.participants.length > 0) {
         return rep.status(400).send({
           message: 'You already joined this pool!'
+        })
+      }
+
+      if (!pool.ownerId) {
+        await prisma.pool.update({
+          where: {
+            id: pool.id
+          },
+          data: {
+            ownerId: req.user.sub
+          }
         })
       }
 
