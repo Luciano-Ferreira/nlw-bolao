@@ -8,12 +8,12 @@ import Logo from '../assets/logo.svg';
 
 export function FindPool() {
   return (
-    <VStack>
+    <VStack bgColor='gray.900' h='full'>
       <Header title='Buscar por código' showBackButton />
 
-      <VStack mt={8} mx={5} alignItems='center'>
+      <VStack mt={8} mx={5} alignItems='center' bgColor='gray.900'>
 
-        <Heading fontFamily='heading' color='' fontSize='xl' mb={8} textAlign='center'>
+        <Heading fontFamily='heading' color='white' fontSize='xl' mb={8} textAlign='center'>
           Encontre um bolão através de {'\n'}
           seu código único
         </Heading>
