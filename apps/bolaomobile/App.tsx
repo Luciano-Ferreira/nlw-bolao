@@ -7,7 +7,7 @@ import {
   Roboto_700Bold,
 } from "@expo-google-fonts/roboto";
 
-import { AuthProvider } from './src/components/contexts/AuthContext';
+import { AuthProvider } from './src/contexts/AuthContext';
 
 import { Loading } from "./src/components/Loading";
 import { SignIn } from './src/screens/SignIn';
