@@ -8,8 +8,8 @@ import Logo from '../assets/logo.svg';
 
 
 export function SignIn() {
-  const { signIn, user } = useAuth();
-
+  const { signIn, isUserLoading } = useAuth();
+  const isLoading = { _spinner: { color: 'white'} }
   
 
   return (
@@ -21,6 +21,8 @@ export function SignIn() {
         title='Entrar com Google' 
         mt={12}
         onPress={signIn}
+        isLoading={isUserLoading}
+        _loading={isLoading}
       />
       <Text color='gray.500' textAlign='center' fontSize='sm' mt={4}>
         Não utilizamos nenhuma informação além {'\n'} do seu e-mail para criação de sua conta.
