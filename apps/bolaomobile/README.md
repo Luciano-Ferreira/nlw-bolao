@@ -27,3 +27,6 @@
 
 - native-base
   - useToast
+
+- country-list
+- react-native-country-flag
