@@ -33,7 +33,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [isUserLoading, setIsUserLoading] = useState(false);
 
   const [request, response, promptAsync] = Google.useAuthRequest({
-    clientId: '673680602599-0f11hobl4em5qcbn92i3fem5ug320lpf.apps.googleusercontent.com',
+    clientId: process.env.CLIENT_ID_GOOGLE_AUTH,
     redirectUri: AuthSession.makeRedirectUri({ useProxy: true }),
     scopes: ['profile', 'email']
   })

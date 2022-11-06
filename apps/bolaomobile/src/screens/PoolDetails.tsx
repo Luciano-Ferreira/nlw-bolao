@@ -36,8 +36,6 @@ export function PoolDetails() {
 
       setPoolDetails(response.data);
 
-
-
     } catch (err) {
       console.log(err)
 

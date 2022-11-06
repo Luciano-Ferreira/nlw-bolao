@@ -35,7 +35,7 @@ export function Guesses({ poolId }: Props) {
 
       setGames(response.data.games);
     } catch (err) {
-      console.log(err);
+      console.error(err);
 
       toast.show({
         title: "Não foi possivel carregar os palpites",
@@ -72,7 +72,7 @@ export function Guesses({ poolId }: Props) {
 
 
     } catch (err) {
-      console.log(err);
+      console.error(err);
 
       toast.show({
         title: "Não foi possivel carregar os palpites",
