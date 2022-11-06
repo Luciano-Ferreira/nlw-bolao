@@ -24,7 +24,7 @@ export function PoolsList() {
       setISLoading(true);
       const response = await api.get("/pools");
 
-      setPools(response.data.pools);
+      setPools(response.data);
     } catch (err) {
       console.log(err);
       toast.show({
@@ -68,7 +68,12 @@ export function PoolsList() {
         <FlatList
           data={pools}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <PoolCard data={item} />}
+          renderItem={({ item }) => (
+            <PoolCard 
+              data={item} 
+              onPress={() => navigate('poolDetails', { id: item.id })}
+            />
+          )}
           px={5}
           showsVerticalScrollIndicator={false}
           _contentContainerStyle={{ pb: 10 }}

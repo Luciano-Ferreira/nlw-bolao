@@ -11,7 +11,7 @@ export async function poolRoutes(fastify: FastifyInstance) {
     return { count };
   });
 
-  fastify.post("/pools/", async (req) => {
+  fastify.post("/pools", async (req) => {
     const createPoolBody = z.object({
       title: z.string(),
     });
@@ -48,7 +48,7 @@ export async function poolRoutes(fastify: FastifyInstance) {
   });
 
   fastify.post(
-    "/pools/join/",
+    "/pools/join",
     {
       onRequest: [authenticate],
     },
@@ -74,7 +74,7 @@ export async function poolRoutes(fastify: FastifyInstance) {
 
       if (!pool) {
         return rep.status(400).send({
-          message: "Pool not found!",
+          message: "Pool not found",
         });
       }
 
@@ -107,7 +107,7 @@ export async function poolRoutes(fastify: FastifyInstance) {
   );
 
   fastify.get(
-    "/pools/",
+    "/mypools",
     {
       onRequest: [authenticate],
     },
@@ -126,7 +126,41 @@ export async function poolRoutes(fastify: FastifyInstance) {
               participants: true,
             },
           },
-          // inclui os 4 primeiros participantes relacionados
+          participants: {
+            select: {
+              id: true,
+
+              user: {
+                select: {
+                  avatarUrl: true,
+                }
+              }
+            },
+            take: 4
+          },
+          owner: {
+            select: {
+              id: true,
+              name: true,
+            },
+          },
+        },
+      });
+
+      return pools;
+    }
+  );
+
+  fastify.get(
+    "/pools",
+    async (req) => {
+      const pools = await prisma.pool.findMany({
+        include: {
+          _count: {
+            select: {
+              participants: true,
+            },
+          },
           participants: {
             select: {
               id: true,

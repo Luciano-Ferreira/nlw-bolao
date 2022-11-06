@@ -6,6 +6,7 @@ import { BottomTabNavigationOptions, createBottomTabNavigator } from '@react-nav
 import { NewPool } from '../screens/NewPool';
 import { PoolsList } from '../screens/PoolsList';
 import { FindPool } from '../screens/FindPool';
+import { PoolDetails } from '../screens/PoolDetails';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -40,6 +41,10 @@ export function AppRoutes() {
       top: Platform.OS === 'android' ? -10 : 0
     }
   } as BottomTabNavigationOptions;
+  
+  const poolDetailsScreenOptions = {
+    tabBarButton: () => null,
+  } as BottomTabNavigationOptions;
 
   const findPoolOptions = {
     tabBarButton: () => null,
@@ -64,6 +69,11 @@ export function AppRoutes() {
         name='findPool'
         component={FindPool}
         options={findPoolOptions}
+      />
+      <Screen
+        name='poolDetails'
+        component={PoolDetails}
+        options={poolDetailsScreenOptions}
       />
     </Navigator>
   )
