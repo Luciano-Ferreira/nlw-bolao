@@ -1,7 +1,7 @@
 ## Table of Contents
 
 - [Layout 🌠](#layout-)
-- [Technologies](#technologies)
+- [Technologies](#technologies---)
 - [Support](#support)
 - [Contributing](#contributing)
 - [License](#memo-license)
