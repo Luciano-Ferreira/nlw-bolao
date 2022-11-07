@@ -1,10 +1,10 @@
 ## Table of Contents
 
-- [Layout 🌠](#layout)
+- [Layout 🌠](#layout-)
 - [Technologies](#technologies)
 - [Support](#support)
 - [Contributing](#contributing)
-- [License](#memolicense)
+- [License](#memo-license)
 - [Autor](#author)
 
 # Layout 🌠
