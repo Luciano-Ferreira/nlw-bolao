@@ -5,7 +5,7 @@
 - [Support](#support)
 - [Contributing](#contributing)
 - [License](#memo-license)
-- [Autor](#author)
+- [Author](#author)
 
 # Layout 🌠
  -  [Layout figma](https://www.figma.com/file/Jq52BKTwUrWeRvF4EEI090/Bol%C3%A3o-da-Copa-(Community)?node-id=0%3A1)

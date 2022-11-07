@@ -1,6 +1,3 @@
-# `server`
-
-> TODO: description
 
 ## Usage
 
@@ -30,8 +27,7 @@
 ```
 
 
-## Technologies :rocket:
-
+## Tools 
 - Prisma
   - @prisma-client
   - prisma-erd-generator
@@ -47,11 +43,9 @@
 
 - JWT
 
-## ERD Diagram
+### Entity Relationship Diagram (ERD)
 
 ![ERD](https://user-images.githubusercontent.com/46464433/199371454-7b3edbc6-52bd-440f-ac25-312f12e7d88e.svg)
-
-
 ## Seeds
 
 ```bash
